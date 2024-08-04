@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Healthcare Management</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="my-4">Healthcare Management System</h1>
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Patients</h2>
+				<form id="patientForm">
+					<input type="hidden" id="patientId">
+					<div class="form-group">
+						<label for="patientName">Name</label>
+						<input type="text" class="form-control" id="patientName" required>
+					</div>
+					<div class="form-group">
+						<label for="patientAge">Age</label>
+						<input type="number" class="form-control" id="patientAge" required>
+					</div>
+					<div class="form-group">
+						<label for="patientGender">Gender</label>
+						<select class="form-control" id="patientGender" required>
+							<option value="" disabled selected>Select Gender</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="patientCondition">Condition</label>
+						<input type="text" class="form-control" id="patientCondition" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
+				<ul id="patientsList" class="list-group mt-3"></ul>
+			</div>
+			<div class="col-md-4">
+				<h2>Doctors</h2>
+				<form id="doctorForm">
+					<input type="hidden" id="doctorId">
+					<div class="form-group">
+						<label for="doctorName">Name</label>
+						<input type="text" class="form-control" id="doctorName" required>
+					</div>
+					<div class="form-group">
+						<label for="doctorSpecialty">Specialty</label>
+						<input type="text" class="form-control" id="doctorSpecialty" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
+				<ul id="doctorsList" class="list-group mt-3"></ul>
+			</div>
+			<div class="col-md-4">
+				<h2>Appointments</h2>
+				<button id="refreshAppointments" class="btn btn-secondary mb-3">Refresh Appointments</button>
+				<form id="appointmentForm">
+					<input type="hidden" id="appointmentId">
+					<div class="form-group">
+						<label for="appointmentPatient">Patient</label>
+						<select class="form-control" id="appointmentPatient" required>
+							<option value="" disabled selected>Select Patient</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="appointmentDoctor">Doctor</label>
+						<select class="form-control" id="appointmentDoctor" required>
+							<option value="" disabled selected>Select Doctor</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="appointmentDateTime">Date and Time</label>
+						<input type="datetime-local" class="form-control" id="appointmentDateTime" required>
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
+				<ul id="appointmentsList" class="list-group mt-3"></ul>
+			</div>
+		</div>
+	</div>
+	<script type="module" src="./js/patients.js"></script>
+	<script type="module" src="./js/doctors.js"></script>
+	<script type="module" src="./js/appointments.js"></script>
+</body>
+
+</html>
