@@ -7,8 +7,8 @@
 
 > #### install http-server  using npm
 > 
-> -npm install -g http-server
+> - npm install -g http-server
 
 > #### start the http server using the below command.
 > 
-> -http-server -p 3000
+> - http-server -p 3000
